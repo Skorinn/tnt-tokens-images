@@ -24,13 +24,25 @@
     p { margin: 0.6em 0; }
     ul { padding-left: 0; list-style: none; margin: 0.6em 0; }
     li { margin: 6px 0; }
-    img {
-      border: 1px solid #ddd;
-      background: #fff;
+    img { border: 1px solid #ddd; background: #fff; }
+
+    /* Case images row */
+    .case-images {
+      display: flex;
+      justify-content: center;
+      gap: 12px;               /* 3×300 + 2×12 = 924px < content width (940px) */
+      flex-wrap: nowrap;       /* keep them on one line on typical desktops */
+      margin: 8px 0;
     }
+    .case-images img {
+      width: 300px;
+      height: auto;
+      max-width: 100%;
+      flex: 1 1 300px;         /* allows graceful shrink on narrow screens */
+    }
+
     /* Keep large images responsive on small screens */
     .wide-img { max-width: 100%; height: auto; }
-    .case-images img { max-width: 100%; height: auto; }
   </style>
 </head>
 <body>
@@ -41,11 +53,20 @@
     <p>Upgrade your tabletop experience with this complete set of custom gaming tokens, designed specifically for <em>This Is Not a Test</em>™ (TNT) by World's End Publishing. These versatile tokens are also perfect for a wide range of skirmish games, roleplaying games, and wargames.</p>
 
     <!-- Product case images -->
-    <p class="case-images">
-      <img src="https://skorinn.github.io/tnt-tokens-images/Token-Case-Top.png" width="300" style="vertical-align: middle; margin: 8px;" alt="Token Case Closed">
-      <img src="https://skorinn.github.io/tnt-tokens-images/Token-Case-Open.png" width="300" style="vertical-align: middle; margin: 8px;" alt="Token Case Open">
-      <img src="https://skorinn.github.io/tnt-tokens-images/Token-Case-Insert.png" width="300" style="vertical-align: middle; margin: 8px;" alt="Token Case Insert with Labels">
-    </p>
+    <!-- Product case images (eBay/Etsy-safe) -->
+	<table width="100%" border="0" cellspacing="0" cellpadding="6">
+	  <tr>
+		<td align="center" width="33%">
+		  <img src="https://skorinn.github.io/tnt-tokens-images/Token-Case-Top.png" alt="Token Case Closed" width="100%">
+		</td>
+		<td align="center" width="33%">
+		  <img src="https://skorinn.github.io/tnt-tokens-images/Token-Case-Open.png" alt="Token Case Open" width="100%">
+		</td>
+		<td align="center" width="33%">
+		  <img src="https://skorinn.github.io/tnt-tokens-images/Token-Case-Insert.png" alt="Token Case Insert with Labels" width="100%">
+		</td>
+	  </tr>
+	</table>
 
     <p>Each token is made in a distinct shape and color for fast visual reference on the battlefield, reducing table clutter and streamlining gameplay. They come neatly sorted in a compact, latching organizer tray—ideal for transport and storage.</p>
 
@@ -72,9 +93,14 @@
     </ul>
 
     <!-- Gameplay example image -->
-    <p>
-      <img class="wide-img" src="https://skorinn.github.io/tnt-tokens-images/Gameplay-scaled.png" width="600" style="margin: 8px;" alt="Tokens in use during gameplay">
-    </p>
+    <!-- Gameplay example image (optional table wrapper) -->
+	<table width="100%" border="0" cellspacing="0" cellpadding="6">
+	  <tr>
+		<td align="center">
+		  <img src="https://skorinn.github.io/tnt-tokens-images/Gameplay-scaled.png" alt="Tokens in use during gameplay" width="80%">
+		</td>
+	  </tr>
+	</table>
 
     <p><strong>Compatible with TNT and great for any system where tactical status tracking is key.</strong></p>
 
